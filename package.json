@@ -4,16 +4,20 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 6,
+      "ecmaVersion": 7,
       "sourceType": "module",
       "ecmaFeatures": {
-        "jsx": true
+        "jsx": true,
+        "experimentalObjectRestSpread": true
       }
     },
     "rules": {
@@ -32,6 +36,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
     "expensify": "^0.2.0",
+    "express": "^4.16.3",
     "jest": "^22.4.3",
     "moment": "^2.22.0",
     "node-sass": "^4.8.3",
@@ -54,6 +59,6 @@
     "webpack-dev-server": "^3.1.1"
   },
   "devDependencies": {
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.14"
   }
 }
