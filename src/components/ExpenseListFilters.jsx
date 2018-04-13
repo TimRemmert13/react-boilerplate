@@ -4,7 +4,8 @@ import {DateRangePicker} from 'react-dates';
 import {setTextFilter,sortByAmount, sortByDate, setStartDate, setEndDate} from '../actions/filters';
 
 export class ExpenseListFilters extends React.Component {
-    state = {
+    
+    state = { 
         calendarFocused: null
     };
 
